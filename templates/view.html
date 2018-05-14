@@ -1,0 +1,119 @@
+
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+	<center>
+	<hr><br>
+		   <div class="card" style="padding:10px; background-color:#81BEF7; width:70%; margin-top:10px ">
+		  <img class="card-img-top" src="{{imgpath}}" alt="Card image" style="width:100px; height:100px; margin:10px" >
+
+            	<br>
+		  <div class="card-body">
+		  	<h2 class="card-title" style="color:white;">
+		  		
+		    Patient Details</h2>
+		   
+		   <p class="card-text">
+		   <p>name ={{pname}}<br>age ={{page}}
+		   <br>sex ={{psex}}<br>address ={{paddr}}<br>Phone ={{pphn}} <br>Date ={{pdate}} <br>Ward ={{pward}}
+		   
+		</p>
+	</div>
+</div>
+		
+
+		
+<hr><p><h2>Diagnosis</h2>
+		{% if pdiag is defined %}
+			<dl>
+				<dt>id</dt>
+				<dd>
+			{{pid}}</dd>
+			<dt>Diagnosis</dt>
+			<dd>{{pdiag}}
+		</dd>
+		<dt>date</dt><dd>
+			{{pdiadate}}
+		</dd>
+	</dl>
+{% else %}
+		not yet diagonised
+		
+	{% endif %}
+<hr><p><h2>Room number</h2>
+		{% if room_res is defined %}
+		{% if room_res[0] is defined %}
+	{{room_res[0][1]}}{{room_res[0][2]}}
+			{% else %}
+			not allocated
+			{% endif %}
+			{% else %}
+			not allocated
+
+			{% endif %}
+		     <hr><p><h2>Lab Tests</h2><br>
+			
+			
+		    
+		
+
+
+		{% if lab_res is defined %}
+		
+		
+			
+<div class="table"><table><tr><th>Specimen</th><th>Test name</th><th>Result</th><th>Ref range</th><th>date</th>
+	{% for i in lab_res %}
+			<tr><td>{{i[1]}}</td><td>{{i[2]}}</td><td>{{i[3]}}</td><td>{{i[4]}}</td><td>{{i[5]}}</td></tr>
+		
+		{% endfor %}
+		</table></div>
+
+		{% else %}
+		no lab test yet
+	
+
+		  {% endif %} 
+		    <br><br><hr>
+		    {% if op_result is defined %}<br><h2>Surgeries/Operations</h2><br>
+		    <div class="table"><table><tr><th>Surgery no</th><th>name</th><th>date</th>
+	{% for i in op_result %}
+			<tr><td>{{i[0]}}</td><td>{{i[3]}}</td><td>{{i[4]}}</td></tr>
+		
+		{% endfor %}
+		</table></div>
+
+		{% else %}
+		no surgeries yet
+	
+
+		  {% endif %} 
+		    <br><br>
+<hr>
+		    
+		    <br>
+		      {% if inv_result is defined %}<br><h2>Invoice</h2>
+		      <div class="table"><table><tr><th>Type</th><th>name</th><th>price</th><th>date</th>
+	{% for i in inv_result %}
+			<tr><td>{{i[1]}}</td><td>{{i[2]}}</td><td>{{i[3]}}</td><td>{{i[4]}}</td></tr>
+		
+		{% endfor %}
+		    {% endif %} <br>
+
+
+
+</center>
+	</body></html>

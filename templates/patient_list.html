@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  
+<title>Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div>
+
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark sticky-top" >
+   
+  
+   
+<ul class="nav navbar-nav navbar-left">
+	<li class="nav_item">
+    <a class="nav-link" href="/"> Home </a></li>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+   <div class="collapse navbar-collapse" id="collapsibleNavbar">
+   
+    <li class="nav-item">
+      <a class="nav-link" href="/login">Logout</a></li></ul>
+      <ul class="nav navbar-nav navbar-right">
+     <li class="nav-item">
+     	 <form action="/expand" method="post" class="form-inline" style="margin-left:50px">
+	  pid:<input type="text" name="id" style="margin:10px"/>
+	<input type="hidden" name="sname" value="{{_userName}}"/>
+	<input type="hidden" name="sid" value="{{sid}}"/>
+	<input type="hidden" name="spass" value="{{_userPassword}}"/>
+    <input type="submit" name="submit" value="details" class="btn" />
+    </form>
+	</li>
+  </ul></div>
+</nav>
+</div>
+
+	<br>
+	<br><center>
+		
+	{% for i in datali %}
+	<div id={{i['id']}}>
+	<div class="card" style="width:50%; height:auto; padding:10px; background-color:#81BEF7">
+			<img class="card-img-top" src="{{i['imagepath']}}{{i['imagename']}}" alt="Card image" style="width:100px; height:100px" >
+			<div class="card-body">
+    <h3 class="card-title" style="color:white;">{{i['name']}}</h3>
+    <p class="card-text"> id:{{i['id']}}<br>
+    	phone no:{{i['phone']}}<br>
+    	address:{{i['address']}}
+    </p>
+    <form action="/expand" method="post">
+	<input type="hidden" name="id" value="{{i['id']}}"/>
+	<input type="hidden" name="sname" value="{{_userName}}"/>
+	<input type="hidden" name="spass" value="{{_userPassword}}"/>
+
+	<input type="hidden" name="sid" value="{{sid}}"/>
+    <input type="submit" name="submit" value="details" class="btn btn-primary" />
+    </form>
+	</div>
+	</div>
+	</div><br>
+		
+		{% endfor %}
+
+	
+<br>
+
+<a href="/login"><button class="btn btn-primary">back</button></a></center><br><hr>
+</body>
+</html>

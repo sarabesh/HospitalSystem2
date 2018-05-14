@@ -1,0 +1,46 @@
+
+
+h1{
+
+background-color: dark;
+color:white;
+
+font-family: Arial;
+}
+
+h3,h2{
+	color:#598a98;
+	font-family: Arial;
+}
+
+body{
+	font-family: Arial;
+	/*background-image: url("backgroundimg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;*/
+}
+
+input.but{
+	background-color: #49c2e3;
+	color: white;
+	padding: 10px;
+}
+
+input{
+	padding: 5px;
+	margin: 5px;
+}
+
+form{
+	font-family: Arial;
+}
+
+th{
+	color: white;
+	background-color: #81BEF7;
+}
+
+table,tr,td{
+	border:1px solid #598a98;
+		padding: 2px;
+}

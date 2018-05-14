@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Hospital Information System</title>
+        <link rel="stylesheet" href="style.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+    </head>
+    <body>
+        <div>
+
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark sticky-top" >
+   <ul class="navbar-nav">
+   <li class="nav-item">
+   <a class="nav-link" href="/"> Home </a></li>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+   <div class="collapse navbar-collapse" id="collapsibleNavbar">
+   
+   
+    <li class="nav-item active">
+      <a class="nav-link" href="/login">Login</a></li>
+      <li class="nav-item">
+      <a class="nav-link" href="/register">Register</a></li>
+   </div>
+  </ul>
+</nav>
+</div>
+                
+<hr>
+<center><div class="container rounded" style="background-color:#81BEF7;padding:20px">
+        <p>
+            <h3>Patient login</h3>
+        <form action="{{url_for('Show')}}", method="post", enctype="multipart/form-data">
+            <br><label>Name : </label>
+            <input type="text" name="name"/><br>
+            <label>Password : </label>
+            <input type="password" name="password"/><br><br>
+            <input type="submit" value="Login" class="btn btn-primary" />  
+        </form>
+        <br>
+        new account? Sign up <a href="/register">here.</a><br>
+        </div>
+        <hr>
+        
+        <p>
+        <div class="container rounded" style="background-color:#81BEF7;padding:20px">  
+          <h3>Staff login</h3>
+          <form action="/Stafflogin", method="post">
+            <br><label>Name : </label>
+            <input type="text" name="name"/><br>
+            <label>Password : </label>
+            <input type="password" name="password"/><br><br>
+            <input type="submit" value="Login" class="btn btn-primary" />
+        </form></div><br><hr>
+    
+    </center>
+    </body>
+</html>

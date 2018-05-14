@@ -1,0 +1,88 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="/static/style.css">
+</head>
+<body><br><center>
+	<h3>Number of patients:</h3>{{pno}}<br>
+		<h3>Number of staffs:</h3>
+	{{sno}}<br>
+	<h3>Number of Payments:</h3>
+	{{suno}}<br>
+	<h3>Total cost from lab tests:</h3>
+	{{lab_cos}}<br>
+	<h3>Total cost from Surgeries/Operations:</h3>
+	{{surg_cos}}<br>
+	<h3>Total cost from Rooms:</h3>
+	{{room_cos}}<br>
+	<h3>Total cost:</h3>
+	{{int_cost}}<br></center>
+
+<div class="container">
+	<div class="row">
+		<div class="col"><br><h2>Invoice</h2>
+		 <div class="table"><table><tr><th>Type</th><th>name</th><th>price</th><th>date</th>
+	{% for i in intlist %}
+			<tr><td>{{i[1]}}</td><td>{{i[2]}}</td><td>{{i[3]}}</td><td>{{i[4]}}</td></tr>
+		
+		{% endfor %}
+</tr></table>
+	</div></div>
+<div class="col"><br><h2>Staff list</h2>
+	<br><h4>Main doctors</h4>
+	<div class="table"><table><tr><th>Name</th></tr>
+		{% for i in ICUstaflist %}
+		<tr><td>{{i[1]}}</td></tr>
+		{% endfor %}
+	</table></div>
+	<br><h4>Normal doctors</h4>
+	<div class="table"><table><tr><th>Name</th></tr>
+		{% for i in norstaflist %}
+		<tr><td>{{i[1]}}</td></tr>
+		{% endfor %}
+	</table></div>
+	<br><h4>Out doctors</h4>
+	<div class="table"><table><tr><th>Name</th></tr>
+		{% for i in outstaflist %}
+		<tr><td>{{i[1]}}</td></tr>
+		{% endfor %}
+	</table></div>
+	<br><h4>Lab Technicians</h4>
+	<div class="table"><table><tr><th>Name</th></tr>
+		{% for i in labstaflist %}
+		<tr><td>{{i[1]}}</td></tr>
+		{% endfor %}
+	</table></div>
+	<br><h4>Managers</h4>
+	<div class="table"><table><tr><th>Name</th></tr>
+		{% for i in manstaflist %}
+		<tr><td>{{i[1]}}</td></tr>
+		{% endfor %}
+	</table></div></div></div><center>
+		<br><h2>Patient list</h2>
+		<div class="table"><table>
+			<tr><th>Name</th></tr>
+			{% for i in patlist %}
+			<tr><td>{{i[1]}}</td><td>
+			<form action="\Show" method="Post">
+				<input type="hidden" name="name" value="{{i[1]}}"/>
+				<input type="hidden" name="password" value="{{i[2]}}"/>
+				<input type="submit" name="Details" value="Details"/>
+			</form></td></tr>
+{% endfor %}
+		</table></div></center>
+
+
+</div></div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<html>
+<body>
+	
+			
+	{% for i in a %}
+	{% if i is not none %}
+
+	<form action="\room_alloc" method="post">
+				
+				<input type="hidden" name="block" value="{{i[0]}}"/>
+				<input type="hidden" name="room" value="{{i[1:]}}"/>
+				<input type="hidden" name="id" value="{{pid}}"/>
+				<div class="form-group"><input type="submit" name="submit" value="{{i}}" class="btn btn-primary"/>
+				</div>
+			</form>
+	
+	{% endif %}
+	{% endfor %}
+	{% for i in b %}
+	{% if i is not none %}
+
+	<form action="\room_alloc" method="post">
+				
+				<input type="hidden" name="block" value="{{i[0]}}"/>
+				<input type="hidden" name="room" value="{{i[1:]}}"/>
+				<input type="hidden" name="id" value="{{pid}}"/>
+				<div class="form-group"><input type="submit" name="submit" value="{{i}}" class="btn btn-primary"/>
+				</div>
+			</form>
+	
+	{% endif %}
+	
+	{% endfor %}
+	{% for i in c %}
+	{% if i is not none %}
+
+	<form action="\room_alloc" method="post">
+				
+				<input type="hidden" name="block" value="{{i[0]}}"/>
+				<input type="hidden" name="room" value="{{i[1:]}}"/>
+				<input type="hidden" name="id" value="{{pid}}"/>
+				<div class="form-group"><input type="submit" name="submit" value="{{i}}" class="btn btn-primary"/>
+				</div>
+			</form>
+	
+	{% endif %}
+	
+	{% endfor %}
+	{% for i in d %}
+{% if i is not none %}
+
+	<form action="\room_alloc" method="post">
+				
+				<input type="hidden" name="block" value="{{i[0]}}"/>
+				<input type="hidden" name="room" value="{{i[1:]}}"/>
+				<input type="hidden" name="id" value="{{pid}}"/>
+				<div class="form-group"><input type="submit" name="submit" value="{{i}}" class="btn btn-primary"/>
+				</div>
+			</form>
+	
+	{% endif %}
+	
+	{% endfor %}
+	</body>
+	</html>
+

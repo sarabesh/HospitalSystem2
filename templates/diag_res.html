@@ -1,0 +1,28 @@
+<html>
+<head><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+</head>
+<body><br><center>
+	<p>{{message}}</p>
+	<form action="\expand" method="POST">
+		<input type="hidden" name="id" value="{{pid}}"/>
+		<input type="hidden" name="pname" value="{{pname}}"/>
+		<input type="hidden" name="ppas" value="{{ppass}}"/>
+
+		<input type="hidden" name="sname" value="{{sname}}"/>
+		<input type="hidden" name="spass" value="{{spass}}"/>
+	<input type="submit" name="submit" class="btn btn-primary" value="back"/>
+</form></center>
+</body>
+</html>
